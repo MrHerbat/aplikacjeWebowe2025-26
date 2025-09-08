@@ -1,3 +1,4 @@
+using cw_3f.Models;
 using cw2_ef.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,6 +16,18 @@ namespace cw2_ef.Controllers
         {
             var books = _context.Books.ToList();
             return View(books);
+        }
+        public IActionResult AddNew()
+        {
+            var book = new Book
+            {
+                Title = "Nowa Książka",
+                Author = "Nowy Autor",
+                PublishedDate = DateTime.Now
+            };
+            _context.Books.Add(book);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
         }
 
     }
