@@ -1,7 +1,7 @@
-﻿@using cw_3f.Models
+﻿@using cw2_ef.Models
 @model List<Book>
 
-<h3>Strona Index</h3>
+<h3>Spis Książek</h3>
 @foreach (var b in Model){
     <div>
         <p>@b.Id - @b.Title - @b.Author - @b.PublishedDate.ToShortDateString()</p>

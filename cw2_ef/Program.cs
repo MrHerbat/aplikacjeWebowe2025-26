@@ -7,7 +7,6 @@ var connString = builder.Configuration.GetConnectionString("sqlite");
 builder.Services.AddDbContext<BooksContext>(
     option => option.UseSqlite(connString)
     );
-
 var app = builder.Build();
 
 app.UseStaticFiles();
