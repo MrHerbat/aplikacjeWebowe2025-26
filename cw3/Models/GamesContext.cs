@@ -41,12 +41,12 @@ public class GamesContext : DbContext
             new Studio{
                 Id = 1,
                 Name = "CD Projekt Red",
-                Address = "Jagiellońska 74, 03-301 Warszawa, Polska"
+                Adress = "Jagiellońska 74, 03-301 Warszawa, Polska"
             },
             new Studio{
                 Id = 2,
                 Name = "Rockstar Games",
-                Address = "475 Park Avenue South, New York, NY 10016, USA"
+                Adress = "475 Park Avenue South, New York, NY 10016, USA"
             }
         );
     }

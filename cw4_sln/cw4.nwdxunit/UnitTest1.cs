@@ -1,0 +1,10 @@
+﻿namespace cw4.nwdxunit;
+
+public class UnitTest1
+{
+    [Fact]
+    public void Test1()
+    {
+
+    }
+}

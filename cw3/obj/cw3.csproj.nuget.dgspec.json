@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/mlesniak/cw3/cw3.csproj": {}
+    "/home/mlesniak/aplikacjeWebowe2025-26/cw3/cw3.csproj": {}
   },
   "projects": {
-    "/home/mlesniak/cw3/cw3.csproj": {
+    "/home/mlesniak/aplikacjeWebowe2025-26/cw3/cw3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/mlesniak/cw3/cw3.csproj",
+        "projectUniqueName": "/home/mlesniak/aplikacjeWebowe2025-26/cw3/cw3.csproj",
         "projectName": "cw3",
-        "projectPath": "/home/mlesniak/cw3/cw3.csproj",
+        "projectPath": "/home/mlesniak/aplikacjeWebowe2025-26/cw3/cw3.csproj",
         "packagesPath": "/home/mlesniak/.nuget/packages/",
-        "outputPath": "/home/mlesniak/cw3/obj/",
+        "outputPath": "/home/mlesniak/aplikacjeWebowe2025-26/cw3/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/mlesniak/.nuget/NuGet/NuGet.Config"
