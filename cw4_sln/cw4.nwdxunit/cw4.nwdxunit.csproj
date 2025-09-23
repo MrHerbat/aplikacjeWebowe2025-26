@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\cw4.nwdclasslib\cw4_slnclasslib.csproj" />
+    <ProjectReference Include="..\cw4.nwdclasslib\cw4.nwdclasslib.csproj" />
   </ItemGroup>
 
 </Project>

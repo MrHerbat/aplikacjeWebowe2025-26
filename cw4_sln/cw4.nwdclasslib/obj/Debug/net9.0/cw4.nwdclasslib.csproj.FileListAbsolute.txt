@@ -1,0 +1,12 @@
+/home/mlesniak/aplikacjeWebowe2025-26/cw4_sln/cw4.nwdclasslib/bin/Debug/net9.0/cw4.nwdclasslib.deps.json
+/home/mlesniak/aplikacjeWebowe2025-26/cw4_sln/cw4.nwdclasslib/bin/Debug/net9.0/cw4.nwdclasslib.dll
+/home/mlesniak/aplikacjeWebowe2025-26/cw4_sln/cw4.nwdclasslib/bin/Debug/net9.0/cw4.nwdclasslib.pdb
+/home/mlesniak/aplikacjeWebowe2025-26/cw4_sln/cw4.nwdclasslib/obj/Debug/net9.0/cw4.nwdclasslib.GeneratedMSBuildEditorConfig.editorconfig
+/home/mlesniak/aplikacjeWebowe2025-26/cw4_sln/cw4.nwdclasslib/obj/Debug/net9.0/cw4.nwdclasslib.AssemblyInfoInputs.cache
+/home/mlesniak/aplikacjeWebowe2025-26/cw4_sln/cw4.nwdclasslib/obj/Debug/net9.0/cw4.nwdclasslib.AssemblyInfo.cs
+/home/mlesniak/aplikacjeWebowe2025-26/cw4_sln/cw4.nwdclasslib/obj/Debug/net9.0/cw4.nwdclasslib.csproj.CoreCompileInputs.cache
+/home/mlesniak/aplikacjeWebowe2025-26/cw4_sln/cw4.nwdclasslib/obj/Debug/net9.0/cw4.nwdclasslib.sourcelink.json
+/home/mlesniak/aplikacjeWebowe2025-26/cw4_sln/cw4.nwdclasslib/obj/Debug/net9.0/cw4.nwdclasslib.dll
+/home/mlesniak/aplikacjeWebowe2025-26/cw4_sln/cw4.nwdclasslib/obj/Debug/net9.0/refint/cw4.nwdclasslib.dll
+/home/mlesniak/aplikacjeWebowe2025-26/cw4_sln/cw4.nwdclasslib/obj/Debug/net9.0/cw4.nwdclasslib.pdb
+/home/mlesniak/aplikacjeWebowe2025-26/cw4_sln/cw4.nwdclasslib/obj/Debug/net9.0/ref/cw4.nwdclasslib.dll
