@@ -12,19 +12,34 @@ public class SqlRepo : IRepo
     }
     public void AddStudent(Student student)
     {
-        throw new NotImplementedException();
+        using var con = new SqliteConnection(_connectionString);
+        using var cmd = con.CreateCommand();
+        cmd.CommandText = "INSERT INTO Students (FirstName, LastName, BirthDate) VALUES (@name, @lastName, @birthDate)";
+        cmd.Parameters.AddWithValue("@name", student.Name);
+        cmd.Parameters.AddWithValue("@lastName", student.LastName);
+        cmd.Parameters.AddWithValue("@birthDate", student.BirthDate);
+
+        con.Open();
+        cmd.ExecuteNonQuery();
+        con.Close();
     }
 
     public void DeleteStudent(int id)
     {
-        throw new NotImplementedException();
+        using var con = new SqliteConnection(_connectionString);
+        using var cmd = con.CreateCommand();
+        cmd.CommandText = "DELETE FROM Students WHERE Id = @id";
+        cmd.Parameters.AddWithValue("@id", id);
+        con.Open();
+        cmd.ExecuteNonQuery();
+        con.Close();
     }
 
     public List<Student> GetAllStudents()
     {
         using var con = new SqliteConnection(_connectionString);
         using var cmd = con.CreateCommand();
-        cmd.CommandText = "SELECT Id, Name, LastName, BirthDate FROM Students";
+        cmd.CommandText = "SELECT Id, FirstName, LastName, BirthDate FROM Students";
         con.Open();
         var students = new List<Student>();
         using var reader = cmd.ExecuteReader();
@@ -47,7 +62,8 @@ public class SqlRepo : IRepo
     {
         using var con = new SqliteConnection(_connectionString);
         using var cmd = con.CreateCommand();
-        cmd.CommandText = "SELECT Id, Name, LastName, BirthDate FROM Students WHERE Id = "+id;
+        cmd.CommandText = "SELECT Id, FirstName, LastName, BirthDate FROM Students WHERE Id = @id";
+        cmd.Parameters.AddWithValue("@id", id);
         con.Open();
         Student student;
         using var reader = cmd.ExecuteReader();
@@ -71,6 +87,15 @@ public class SqlRepo : IRepo
 
     public void UpdateStudent(Student student)
     {
-        throw new NotImplementedException();
+        using var con = new SqliteConnection(_connectionString);
+        using var cmd = con.CreateCommand();
+        cmd.CommandText = "UPDATE Students SET FirstName = @name, LastName = @lastName, BirthDate = @birthDate WHERE Id = @id";
+        cmd.Parameters.AddWithValue("@name", student.Name);
+        cmd.Parameters.AddWithValue("@lastName", student.LastName);
+        cmd.Parameters.AddWithValue("@birthDate", student.BirthDate);
+        cmd.Parameters.AddWithValue("@id", student.Id);
+        con.Open();
+        cmd.ExecuteNonQuery();
+        con.Close();
     }
 }

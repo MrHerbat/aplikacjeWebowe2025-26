@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("cw4.nwdxunit")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ff7179149caf75ffcba98bcb1e0b1c60f26183b8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d0072dc11330150b4458a23d08e2f59fbc0b0635")]
 [assembly: System.Reflection.AssemblyProductAttribute("cw4.nwdxunit")]
 [assembly: System.Reflection.AssemblyTitleAttribute("cw4.nwdxunit")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

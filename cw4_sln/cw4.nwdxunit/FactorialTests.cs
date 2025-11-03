@@ -37,7 +37,6 @@ public class FactorialTests
     public void if_negative_is_not_valid()
     {
         int a = -1;
-        int expected = 1;
 
         var factorial = new cw4.nwdclasslib.Factorial();
         Assert.Throws<ArgumentException>(() => factorial.Calculate(a));
