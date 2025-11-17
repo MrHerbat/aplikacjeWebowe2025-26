@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("cw5_api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d0072dc11330150b4458a23d08e2f59fbc0b0635")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ebb0561550bbf8b921fdd82555d6e9e8f9a12927")]
 [assembly: System.Reflection.AssemblyProductAttribute("cw5_api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("cw5_api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,0 +1,5 @@
+1 	Oko Świata 	Robert Jordan 	1990-11-01T00:00:00 	1
+2 	Wiedźmin: Ostatnie życzenie 	Andrzej Sapkowski 	1993-05-01T00:00:00 	null
+3 	Lalka 	Bolesław Prus 	1890-01-01T00:00:00 	null
+4 	Pan Tadeusz 	Adam Mickiewicz 	1834-06-28T00:00:00 	null
+9 	Testowa 24 	Tomek Testowicz 	2006-09-30T00:00:00 	1
