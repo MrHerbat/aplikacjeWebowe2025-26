@@ -17,9 +17,9 @@ const main = async () =>{
     let b: number = +answer_b;
 
     if(choice=="r"){
-        console.log("NWD podanych liczb to:",recNWD(a,b));
+        console.log("rekurcyjnie NWD podanych liczb to:",recNWD(a,b));
     }else{
-        console.log("NWD podanych liczb to:",NWD(a,b));
+        console.log("iteracyjnie NWD podanych liczb to:",NWD(a,b));
     }
     readObject.close();
 };

@@ -1,7 +1,21 @@
-import { colors, type Book, books } from "./data.js";
+import { colors, type Book, books, getMaxId } from "./data.js";
 
 const result1 = document.querySelector("#result1");
 const result2 = document.querySelector("#result2");
+const form = document.querySelector<HTMLFormElement>("form");
+form?.addEventListener('submit',(event)=>{
+    event.preventDefault();
+    const newBook: Book = {
+        id:getMaxId(books)+1,
+        title: (document.querySelector<HTMLInputElement>("#title")?.value||''),
+        author: (document.querySelector<HTMLInputElement>("#title")?.value||''),
+        year: Number(document.querySelector<HTMLInputElement>("#title")?.value||''),
+        pages: Number(document.querySelector<HTMLInputElement>("#title")?.value||''),
+        price: Number(document.querySelector<HTMLInputElement>("#title")?.value||''),
+    };
+    books.push(newBook);
+    if(result2)generateTable(books,result2);
+});
 if(result1){
     generColors(colors,result1)
     document.querySelector<HTMLSelectElement>("#colorSelect")
@@ -13,9 +27,10 @@ if(result1){
     console.error("Brak elementu o id result1");
 }
 if(result2){
-    generTable(books,result2);
+    generateTable(books,result2);
+}else{
+    console.error("Brak elementu o id result2");
 }
-
 function generColors(colors:string[],elem:Element){
     const select = document.createElement("select");
     select.id = "colorSelect";
@@ -28,64 +43,59 @@ function generColors(colors:string[],elem:Element){
     }
     elem.appendChild(select);
 }
-function generTable(books:Book[],elem:Element){
+
+function generateTable(books: Book[], elem: Element) {
+    elem.innerHTML = '';
     const table = document.createElement("table");
-    table.className = "table";
+    table.className = "table table-bordered";
 
-    let x:number = 1;
+    const headerRow = document.createElement("tr");
+    headerRow.innerHTML = `
+        <th>Lp.</th>
+        <th>Tytuł</th>
+        <th>Autor</th>
+        <th>Rok</th>
+        <th>Liczba stron</th>
+        <th>Cena</th>
+    `
+    table.appendChild(headerRow);
 
-    let row = document.createElement("tr");
-    var headerNumber = document.createElement("th");
-    headerNumber.textContent = "#";
-    row.appendChild(headerNumber);
-    var headerTitle = document.createElement("th");
-    headerTitle.textContent = "Title";
-    row.appendChild(headerTitle);
-    var headerAuthor = document.createElement("th");
-    headerAuthor.textContent = "Author";
-    row.appendChild(headerAuthor);
-    var headerYear = document.createElement("th");
-    headerYear.textContent = "Year";
-    row.appendChild(headerYear);
-    var headerPages = document.createElement("th");
-    headerPages.textContent = "Pages";
-    row.appendChild(headerPages);
-    var headerPrice = document.createElement("th");
-    headerPrice.textContent = "Price";
-    row.appendChild(headerPrice);
-    table.appendChild(row);
+    const fragment = document.createDocumentFragment();
+    books.forEach((book) => {
+        const row = document.createElement("tr");
+        row.className = "clickable";
+        const values = [
+            String(book.id),
+            book.title,
+            book.author,
+            String(book.year),
+            String(book.pages),
+            String(book.price)+"PLN"
+        ];
+        row.onclick = () => {
+                const result3 = document.querySelector("#result3");
+                if(result3){
+                    result3.innerHTML = `<h3>Szczegóły książki</h3><table class='table table-bordered'>
+                    <tr>
+                        <th>Lp.</th>
+                        <th>Tytuł</th>
+                        <th>Autor</th>
+                        <th>Rok</th>
+                        <th>Liczba stron</th>
+                        <th>Cena</th></tr>
+                    <tr><td>${values.join("</td><td>")}</td></tr>
+                    </table>`;
+                }
+        };
+        values.forEach((val, idx) => {
+            const td = document.createElement("td");
+            td.textContent = val;
+            if (idx === 5) td.style.backgroundColor = book.price > 35 ? "red" : book.price < 30 ? "green" : "";
+            row.appendChild(td);
+        });
+        fragment.appendChild(row);
+    });
 
-    for(const book of books){
-        row = document.createElement("tr");
-
-        const numberCell = document.createElement("td");
-        numberCell.textContent = String(x);
-        row.appendChild(numberCell);
-
-        const titleCell = document.createElement("td");
-        titleCell.textContent = book.title;
-        row.appendChild(titleCell);
-
-        const authorCell = document.createElement("td");
-        authorCell.textContent = book.author;
-        row.appendChild(authorCell);
-
-        const yearCell = document.createElement("td");
-        yearCell.textContent = String(book.year);
-        row.appendChild(yearCell);
-
-        const pagesCell = document.createElement("td");
-        pagesCell.textContent = String(book.pages);
-        row.appendChild(pagesCell);
-
-        const priceCell = document.createElement("td");
-        book.price>35?priceCell.style.backgroundColor = "red": book.price<30?priceCell.style.backgroundColor = "green":null;
-        priceCell.textContent = String(book.price);
-        row.appendChild(priceCell);
-
-        table.appendChild(row);
-        x++;
-    }
-
+    table.appendChild(fragment);
     elem.appendChild(table);
 }
