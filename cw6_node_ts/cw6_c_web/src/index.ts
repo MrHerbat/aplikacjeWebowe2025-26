@@ -1,6 +1,6 @@
 import { colors, type Book, books, getMaxId } from "./data.js";
 
-const result1 = document.querySelector("#result1");
+//const result1 = document.querySelector("#result1");
 const result2 = document.querySelector("#result2");
 const form = document.querySelector<HTMLFormElement>("form");
 form?.addEventListener('submit',(event)=>{
@@ -16,16 +16,16 @@ form?.addEventListener('submit',(event)=>{
     books.push(newBook);
     if(result2)generateTable(books,result2);
 });
-if(result1){
-    generColors(colors,result1)
-    document.querySelector<HTMLSelectElement>("#colorSelect")
-            ?.addEventListener("change", (event)=>{
-                document.body.style.backgroundColor = 
-                    (event.target as HTMLSelectElement).value;
-    });
-}else{
-    console.error("Brak elementu o id result1");
-}
+//if(result1){
+//     generColors(colors,result1)
+//     document.querySelector<HTMLSelectElement>("#colorSelect")
+//             ?.addEventListener("change", (event)=>{
+//                 document.body.style.backgroundColor = 
+//                     (event.target as HTMLSelectElement).value;
+//     });
+// }else{
+//     console.error("Brak elementu o id result1");
+// }
 if(result2){
     generateTable(books,result2);
 }else{
