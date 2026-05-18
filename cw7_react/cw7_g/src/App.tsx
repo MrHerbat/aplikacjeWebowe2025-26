@@ -1,0 +1,29 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import { createBrowserRouter, RouterProvider } from "react-router";
+import Layout from "./components/Layout";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import PageNotFound from "./pages/PageNotFound";
+import MyForm from "./pages/MyForm";
+import ImagesPage from "./pages/ImagesPage";
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      { index: true, element: <Home /> },
+      { path: "about", element: <About /> },
+      { path: "myform", element: <MyForm /> },
+      { path: "contact", element: <Contact /> },
+      { path: "images", element: <ImagesPage /> },
+      { path: "*", element: <PageNotFound /> },
+    ],
+  },
+]);
+function App() {
+  return <RouterProvider router={router} />;
+}
+
+export default App;
